@@ -1,0 +1,35 @@
+{% extends "base.html" %}  <!-- Inherit the layout and structure from base.html -->
+
+{% block content %}
+<div class="box">  <!-- A container div with the class 'box' for styling the login form -->
+
+    <!-- Heading for the login page -->
+    <h1>Login</h1>
+
+    <!-- Display flash messages for feedback -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <!-- Display each flash message in a paragraph -->
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <!-- Form for user login -->
+    <form method="post">
+        <!-- Input field for the user's email address -->
+        <input type="text" name="email" placeholder="Email" required="required" />
+
+        <!-- Input field for the user's password -->
+        <input type="password" name="password" placeholder="Password" required="required" />
+
+        <!-- Submit button for the form -->
+        <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+    </form>
+</div>
+
+{% endblock %}
+
+
+

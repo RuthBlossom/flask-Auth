@@ -1,0 +1,26 @@
+{% extends "base.html" %}  <!-- Inherit the layout and structure from base.html -->
+
+{% block content %}
+<div class="box">  <!-- A container div with the class 'box' for styling the registration form -->
+
+    <h1>Register</h1>  <!-- Heading for the registration page -->
+
+    <!-- Form for user registration -->
+    <form action="{{ url_for('register') }}" method="post">
+        <!-- Text input for the user's name -->
+        <input type="text" name="name" placeholder="Name" required="required" />
+
+        <!-- Email input for the user's email address -->
+        <input type="email" name="email" placeholder="Email" required="required" />
+
+        <!-- Password input for the user's password -->
+        <input type="password" name="password" placeholder="Password" required="required" />
+
+        <!-- Submit button for the form -->
+        <button type="submit" class="btn btn-primary btn-block btn-large">Sign me up.</button>
+    </form>
+</div>
+
+{% endblock %}
+
+
